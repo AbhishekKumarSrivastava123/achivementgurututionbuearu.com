@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Achievement Guru Tuition</title>
+<link rel="icon" href="C:\Users\Hello\Downloads\dd.png" />
+
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;color:#000;}
+    
+    body{
+        background: linear-gradient(to bottom right, #b3e5fc, #e1f5fe);
+    }
+
+    header{padding:20px;text-align:center;}
+    h1{font-size:26px;margin:5px 0;}
+    h2{font-size:22px;margin:15px 0;}
+    nav{margin-top:10px;}
+    nav a{margin:0 10px;text-decoration:none;font-weight:bold;}
+    section{padding:20px;max-width:900px;margin:auto;}
+    .box{
+        border:1px solid #000;
+        padding:15px;
+        border-radius:8px;
+        margin:10px 0;
+        background:#fff;
+    }
+    form input, form select, form textarea{
+        width:100%;padding:10px;border:1px solid #000;margin:6px 0;border-radius:5px;
+        background:#fff;color:#000;
+    }
+    button{
+        width:100%;padding:12px;font-size:16px;border:none;border-radius:5px;
+        background:#000;color:#fff;cursor:pointer;margin-top:8px;
+    }
+    footer{
+        padding:20px;text-align:center;border-top:1px solid #000;margin-top:20px;
+        background:#fff;
+    }
+</style>
+
+<script>
+function sendToWhatsApp(form){
+    let inputs = form.querySelectorAll("input, textarea, select");
+    let message = "📩 New Enquiry:\n";
+
+    inputs.forEach(i=>{
+        if(i.value.trim() !== ""){
+            message += `${i.placeholder || i.name}: ${i.value}\n`;
+        }
+    });
+
+    let url = "https://wa.me/918299663267?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+
+    alert("✅ Your form has been submitted!\nWe will contact you shortly.");
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <h1>Achievement Guru Tuition</h1>
+    <p>Professional Home Tutors & Online Classes</p>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Admission</a>
+        <a href="#">Teacher</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <p style="margin-top:10px;font-weight:bold;">
+        Professional Home Tuition in Varanasi — ICSE | CBSE | NIOS | NEET | IIT Foundation | CUET
+    </p>
+    <p><b>Call:</b> +91 82996 63267</p>
+</header>
+
+<section>
+    <h2>Boards Covered</h2>
+    <p><b>ICSE, CBSE, NIOS, UP</b></p>
+
+    <h2>Subjects Available</h2>
+    <p>
+        Maths, Science, Physics, Chemistry, Biology, English, SST, History, Geography, Civics,  
+        Computers, Coding, Hindi, Sanskrit, French, German, Commerce, Accounts, Economics,  
+        Music, Drawing & more…
+    </p>
+</section>
+
+<!-- ✅ UPDATED STUDENT REGISTRATION -->
+<section>
+    <h2>Online Admission / Registration</h2>
+    <form onsubmit="event.preventDefault(); sendToWhatsApp(this);">
+        <input type="text" placeholder="Student Name" required>
+
+        <select name="Class" required>
+            <option value="">Select Class</option>
+            <option>Nursery</option>
+            <option>LKG</option>
+            <option>UKG</option>
+            <option>Class 1</option>
+            <option>Class 2</option>
+            <option>Class 3</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+            <option>Class 11</option>
+            <option>Class 12</option>
+            <option>Foundation</option>
+        </select>
+
+        <select name="Board" required>
+            <option value="">Select Board</option>
+            <option>ICSE</option>
+            <option>CBSE</option>
+            <option>NIOS</option>
+            <option>NEET</option>
+            <option>IIT Foundation</option>
+            <option>CUET</option>
+            <option>UP BOARD</option>
+        </select>
+
+        <input type="text" placeholder="Address / Area">
+        <input type="text" placeholder="Parent Phone Number" required>
+        <input type="email" placeholder="Parent Email (optional)">
+        <input type="text" placeholder="Subjects required">
+
+        <button type="submit">Submit & Send to WhatsApp</button>
+    </form>
+</section>
+
+<section>
+    <h2>General Enquiry</h2>
+    <form onsubmit="event.preventDefault(); sendToWhatsApp(this);">
+        <input type="text" placeholder="Your Name" required>
+        <input type="text" placeholder="Phone Number" required>
+        <textarea rows="3" placeholder="Your Query"></textarea>
+
+        <button type="submit">Send Enquiry on WhatsApp</button>
+    </form>
+</section>
+
+<section>
+    <h2>Teacher Registration</h2>
+    <form onsubmit="event.preventDefault(); sendToWhatsApp(this);">
+        <input type="text" placeholder="Teacher Name" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="text" placeholder="Subjects (e.g. Maths, Science)">
+        <input type="text" placeholder="Qualification (M.Sc / B.Ed etc.)">
+        <input type="text" placeholder="Experience">
+        <input type="text" placeholder="Area / Location">
+        <textarea rows="2" placeholder="Extra Details (optional)"></textarea>
+
+        <button type="submit">Apply as Teacher</button>
+    </form>
+</section>
+
+<section>
+    <h2>FAQ</h2>
+    <div class="box"><p>Do you provide Demo Class?</p></div>
+    <div class="box"><p>Female Teachers Available?</p></div>
+    <div class="box"><p>Which areas covered?</p></div>
+    <div class="box"><p>All boards covered?</p></div>
+    <div class="box"><p>Do you teach coding?</p></div>
+</section>
+
+<footer>
+    <p><b>Contact Us</b></p>
+    <p>Phone: +91 82996 63267</p>
+    <p>Location: Varanasi</p>
+    <p>© Achievement Guru Tuition Bureau — Home Tuition | Online Classes | Teacher Recruitment</p>
+</footer>
+
+</body>
+</html>
